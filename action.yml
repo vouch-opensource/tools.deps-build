@@ -1,0 +1,21 @@
+name: tools.deps-builder
+author: 'Ray McDermott'
+description: 'Invoke the Clojure tools.deps CLI. Mainly here to support CI tests'
+branding:
+  icon: check-circle
+  color: purple
+inputs:
+  alias:
+    description: 'The alias or concatenated aliases (eg test, mem:test, ...)'
+    required: true
+    default: test
+  java-opts:
+    description: 'Any java opts (eg -Xmx512m)'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.alias }}
+    - ${{ inputs.java-opts }}
+
