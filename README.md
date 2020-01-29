@@ -11,13 +11,13 @@ Note: Since the action is not interactive, it invokes the CLI via `clojure` rath
 
 ### `alias`
 
-**Optional** The alias or concatenated aliases (eg `:ci`, `:mem:test`, ...)
+**Optional:** The alias or concatenated aliases (eg `:ci`, `:mem:test`, ...)
 
-**Default** `test`
+**Default:** `:test`
 
 ### `java-opts`
 
-**Optional** Any java opts (eg `-Xmx512m`)
+**Optional:** Any java opts (eg `-Xmx512m`)
 
 ## Example usage - default, to run `:test` alias
 
