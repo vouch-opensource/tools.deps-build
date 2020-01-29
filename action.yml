@@ -2,8 +2,8 @@ name: tools.deps-builder
 author: 'Ray McDermott'
 description: 'Invoke the Clojure tools.deps CLI. Mainly here to support CI tests'
 branding:
-  icon: check-circle
-  color: purple
+  icon: award
+  color: green
 inputs:
   alias:
     description: 'The alias or concatenated aliases (eg test, mem:test, ...)'
