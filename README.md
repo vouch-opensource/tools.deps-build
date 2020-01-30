@@ -17,7 +17,7 @@ Note: Since the action is not interactive, it invokes the CLI via `clojure` rath
 
 ### `java-opts`
 
-**Optional:** Any java opts (eg `-Xmx512m`)
+**Optional:** Any java opts, space separated (eg `-Xmx512m`)
 
 **Default:** none are set
 
@@ -45,13 +45,13 @@ _Please note that there are some other actions on the GitHub marketplace that en
 ## Example usage - default, to run `:test` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1
+uses: actions/tools.deps-builder@v1.0.0
 ```
 
 ## Example usage - pass an SSH key to run the tests
 
 ```yaml 
-uses: actions/tools.deps-builder@v1
+uses: actions/tools.deps-builder@v1.0.0
 with:
   ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
@@ -59,7 +59,7 @@ with:
 ## Example usage - invoke `:xyz` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1
+uses: actions/tools.deps-builder@v1.0.0
 with:
   alias: :xyz
 ```
@@ -67,7 +67,7 @@ with:
 ## Example usage - pass Java opts
 
 ```yaml 
-uses: actions/tools.deps-builder@v1
+uses: actions/tools.deps-builder@v1.0.0
 with:
   java-opts: -Xmx512m -Xms128m
 ```
@@ -75,7 +75,7 @@ with:
 ## Example usage - pass Java opts and use `:abc` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1
+uses: actions/tools.deps-builder@v1.0.0
 with:
   alias: :abc
   java-opts: -Xmx512m -Xms128m
