@@ -31,11 +31,7 @@ then
 
   ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-  SSH_KEY=~/.ssh/github_rsa
-
-  echo $sshKey > $SSH_KEY
-  chmod 600 $SSH_KEY
-  ssh-add $SSH_KEY
+  ssh-add <(echo "$sshKey")
 
 fi
 
