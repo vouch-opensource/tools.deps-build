@@ -12,10 +12,14 @@ inputs:
   java-opts:
     description: 'Any java opts (eg -Xmx512m)'
     required: false
+  ssh-key:
+    description: 'A GitHub secret that has the SSH key to access other private repositories (eg `${{ secrets.SSH_PRIVATE_KEY }}`)'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.alias }}
     - ${{ inputs.java-opts }}
+    - ${{ inputs.ssh-key }}
 

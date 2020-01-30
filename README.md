@@ -19,10 +19,41 @@ Note: Since the action is not interactive, it invokes the CLI via `clojure` rath
 
 **Optional:** Any java opts (eg `-Xmx512m`)
 
+**Default:** none are set
+
+### `ssh-key`
+
+**Optional:** A GitHub secret that has the The SSH key needed to access code from other private repositories (eg `${{ secrets.SSH_PRIVATE_KEY }}`)
+
+**Default:** no SSH agent is started or key used
+
+### Why an SSH key?
+When running this action to you might need to fetch dependencies from your other private repositories.
+
+GitHub Actions only have access to the repository they run for. To access additional private repositories you need to provide an SSH key with sufficient access privileges.
+
+_Please note that there are some other actions on the GitHub marketplace that enable setting up an SSH agent. Our experience is that the mechanisms to support SSH agent interplay between actions is complex and complexity brings risks. We think that it is more straightforward and secure to have this action support the feature within its own scope. We will continue to review this choice as the Docker options improve and the GitHub environment matures._
+
+**For security purposes, we do not expose the SSH agent outside of this action.**
+
+### SSH Setup
+1. Create an SSH key with sufficient access privileges. For security reasons, don't use your personal SSH key but set up a dedicated one for use in GitHub Actions. See the [Github documentation](https://developer.github.com/v3/guides/managing-deploy-keys/) for more support.
+1. Make sure you **don't have a passphrase** set on the private key.
+1. In your repository, go to the _Settings > Secrets_ menu and create a new secret. In this example, we'll call it `SSH_PRIVATE_KEY`. Put the contents of the private SSH key file into the contents field.
+1. This key must start with `-----BEGIN ... PRIVATE KEY-----`, consist of many lines and ends with `-----END ... PRIVATE KEY-----`.
+
 ## Example usage - default, to run `:test` alias
 
 ```yaml 
 uses: actions/tools.deps-builder@v1
+```
+
+## Example usage - pass an SSH key to run the tests
+
+```yaml 
+uses: actions/tools.deps-builder@v1
+with:
+  ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
 ## Example usage - invoke `:xyz` alias
