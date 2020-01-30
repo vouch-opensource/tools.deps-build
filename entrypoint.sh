@@ -27,7 +27,7 @@ then
 
   eval "$(ssh-agent -s)"
 
-  mkdir ~/.ssh
+  [[ ! -d ~/.ssh ]] && mkdir ~/.ssh
 
   ssh-keyscan github.com >> ~/.ssh/known_hosts
 
