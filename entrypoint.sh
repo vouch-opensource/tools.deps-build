@@ -27,9 +27,9 @@ then
 
   eval "$(ssh-agent -s)"
 
-  [[ ! -d ~/.ssh ]] && mkdir ~/.ssh
+  [[ ! -d ~/.ssh ]] && mkdir /root/.ssh
 
-  ssh-keyscan github.com >> ~/.ssh/known_hosts
+  ssh-keyscan github.com >> /root/.ssh/known_hosts
 
   ssh-add <(echo "$sshKey")
 
