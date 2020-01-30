@@ -27,6 +27,8 @@ then
 
   eval "$(ssh-agent -s)"
 
+  mkdir ~/.ssh
+
   ssh-keyscan github.com >> ~/.ssh/known_hosts
 
   SSH_KEY=~/.ssh/github_rsa
