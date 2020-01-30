@@ -13,7 +13,7 @@ inputs:
     description: 'Any java opts (eg -Xmx512m)'
     required: false
   ssh-key:
-    description: 'A GitHub secret that has the SSH key to access other private repositories (eg `${{ secrets.SSH_PRIVATE_KEY }}`)'
+    description: 'GitHub secret with the SSH private key to access your private repositories'
     required: false
 runs:
   using: 'docker'
