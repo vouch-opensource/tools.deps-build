@@ -35,6 +35,13 @@ then
 
 fi
 
+# Working Directory
+workingDirectory=$4
+
+if [[ -n $workingDirectory ]]; then
+  cd "$workingDirectory"
+fi
+
 # Log the actions
 set -x
 
