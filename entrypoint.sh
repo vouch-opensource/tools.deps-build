@@ -38,9 +38,17 @@ fi
 # Working Directory
 workingDirectory=$4
 
+set +e
 if [[ -n $workingDirectory ]]; then
-  cd "$workingDirectory"
+  if [[ -d $workingDirectory ]]; then
+    cd "$workingDirectory"
+  else
+    echo "ERROR: working-directory $workingDirectory does not exist"
+    exit 1
+  fi
 fi
+
+set -e
 
 # Log the actions
 set -x
