@@ -15,6 +15,9 @@ inputs:
   ssh-key:
     description: 'GitHub secret with the SSH private key to access your private repositories'
     required: false
+  working-directory:
+    description: 'Working directoy in which to execute the clojure command'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,4 +25,5 @@ runs:
     - ${{ inputs.alias }}
     - ${{ inputs.java-opts }}
     - ${{ inputs.ssh-key }}
+    - ${{ inputs.working-directory }}
 

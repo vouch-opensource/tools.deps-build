@@ -21,6 +21,10 @@ Note: Since the action is not interactive, it invokes the CLI via `clojure` rath
 
 **Default:** none are set
 
+### `working-directory`
+
+**Optional:** In case the clojure command should not be executed in the root directory, you can specify another working directory.
+
 ### `ssh-key`
 
 **Optional:** A GitHub secret that has the The SSH key needed to access code from other private repositories (eg `${{ secrets.SSH_PRIVATE_KEY }}`)
