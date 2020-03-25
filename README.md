@@ -49,13 +49,13 @@ _Please note that there are some other actions on the GitHub marketplace that en
 ## Example usage - default, to run `:test` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1.0.0
+uses: actions/tools.deps-builder@v1.0.1
 ```
 
 ## Example usage - pass an SSH key to run the tests
 
 ```yaml 
-uses: actions/tools.deps-builder@v1.0.0
+uses: actions/tools.deps-builder@v1.0.1
 with:
   ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
@@ -63,7 +63,7 @@ with:
 ## Example usage - invoke `:xyz` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1.0.0
+uses: actions/tools.deps-builder@v1.0.1
 with:
   alias: :xyz
 ```
@@ -71,7 +71,7 @@ with:
 ## Example usage - pass Java opts
 
 ```yaml 
-uses: actions/tools.deps-builder@v1.0.0
+uses: actions/tools.deps-builder@v1.0.1
 with:
   java-opts: -Xmx512m -Xms128m
 ```
@@ -79,7 +79,7 @@ with:
 ## Example usage - pass Java opts and use `:abc` alias
 
 ```yaml 
-uses: actions/tools.deps-builder@v1.0.0
+uses: actions/tools.deps-builder@v1.0.1
 with:
   alias: :abc
   java-opts: -Xmx512m -Xms128m
